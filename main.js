@@ -1,6 +1,15 @@
 //Converts Integer array into an array of strings representing the phonetic equivalent of the integer
 function convertArray(intArray){
+    //String to store converted list
+    var phoneticArray = []
+    
+    //Loop through intArray and convert each integer into the correct phonetic equivalent, then add this to the ph
+    for (let i = 0; i < intArray.length; i++){
+        phoneticArray.push(convertInt(intArray[i]));
+    }
 
+    //Return the array of strings with the phonetic equivalents of each integer
+    return phoneticArray;
 }
 
 //Converts single integer to phonetic equivalent (e.g 123 will become OneTwoThree), returns this as a string
@@ -72,15 +81,15 @@ function printArray(stringArray){
     console.log(output);
 }
 
-//Testing printArray
-console.log("printArray Tests");
-printArray(["One","Two","Three"]);
-printArray(["One"]);
+//Tests for convertArray
+var arr = [3, 25, 209];
+var arr1 = [10, 300, 5];
+var arr2 = [1234, 56789, 0, 123, 234, 567, 89];
 
-//Testing convertInt
-console.log("convertInt Tests")
-console.log(convertInt(3));
-console.log(convertInt(25));
-console.log(convertInt(209));
-console.log(convertInt(1234));
-console.log(convertInt(56789));
+var converted1 = convertArray(arr);
+var converted2 = convertArray(arr1);
+var converted3 = convertArray(arr2);
+
+printArray(converted1);
+printArray(converted2);
+printArray(converted3);
