@@ -81,15 +81,9 @@ function printArray(stringArray){
     console.log(output);
 }
 
-//Tests for convertArray
-var arr = [3, 25, 209];
-var arr1 = [10, 300, 5];
-var arr2 = [1234, 56789, 0, 123, 234, 567, 89];
-
-var converted1 = convertArray(arr);
-var converted2 = convertArray(arr1);
-var converted3 = convertArray(arr2);
-
-printArray(converted1);
-printArray(converted2);
-printArray(converted3);
+//Create array to store command line arguments after the first two. These arguments are the integer array that will be converted into a phonetic form
+var intArray = process.argv.slice(2);
+//Convert array to phonetic form
+var phoneticIntArray = convertArray(intArray);
+//Print resulting array to stdout
+printArray(phoneticIntArray);
